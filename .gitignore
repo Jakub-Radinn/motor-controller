@@ -1,0 +1,6 @@
+# Compilation related
+/Release
+
+# Misc
+*.tmp
+*.zip
