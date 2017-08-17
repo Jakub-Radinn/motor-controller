@@ -1,7 +1,10 @@
 eclipse.preferences.version=1
+encoding//Release/linked-mw/subdir_rules.mk=UTF-8
+encoding//Release/linked-mw/subdir_vars.mk=UTF-8
 encoding//Release/linked/subdir_rules.mk=UTF-8
 encoding//Release/linked/subdir_vars.mk=UTF-8
 encoding//Release/makefile=UTF-8
+encoding//Release/objects.mk=UTF-8
 encoding//Release/sources.mk=UTF-8
 encoding//Release/src/subdir_rules.mk=UTF-8
 encoding//Release/src/subdir_vars.mk=UTF-8

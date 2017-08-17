@@ -174,11 +174,6 @@ typedef struct _MOTOR_Vars_t_
 interrupt void mainISR(void);
 
 
-//! \brief     Updates the global motor variables
-//!
-void updateGlobalVariables_motor(CTRL_Handle handle, ST_Handle stHandle);
-
-
 //! \brief     Reset Ls Q format to a higher value when Ls identification starts
 //!
 void CTRL_resetLs_qFmt(CTRL_Handle handle, const uint_least8_t qFmt);
@@ -198,11 +193,6 @@ void recalcKpKi(CTRL_Handle handle);
 //! \brief     Calculates the maximum qFmt value for Ls identification, to get a more accurate Ls per unit
 //!
 void CTRL_calcMax_Ls_qFmt(CTRL_Handle handle, uint_least8_t *p_qFmt);
-
-
-//! \brief     Updates Kp and Ki gains in the controller object
-//!
-void updateKpKiGains(CTRL_Handle handle);
 
 
 //! \brief     Set electrical frequency limit to zero while identifying an induction motor

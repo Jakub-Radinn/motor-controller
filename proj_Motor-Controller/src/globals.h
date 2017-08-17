@@ -8,7 +8,7 @@
 #define HDR_GLOBALS_H_
 
 
-
+#include "main.h"
 
 
 
