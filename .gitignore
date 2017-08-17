@@ -1,5 +1,5 @@
 # Compilation related
-/Release
+Release/
 
 # Misc
 *.tmp
