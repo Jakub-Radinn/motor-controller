@@ -83,7 +83,7 @@
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>
-						<entry excluding="memCopy.c|F28069F.cmd|2806xRevB_IQmath_BootROMSymbols_fpu32.lib|test_fast_secure_flash.cmd|ctrlUser.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+						<entry excluding="linked-mw/memCopy.c|linked-mw/F28069F.cmd|2806xRevB_IQmath_BootROMSymbols_fpu32.lib|ctrlUser.c|test_fast_secure_flash.cmd" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>
@@ -171,7 +171,7 @@
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>
-						<entry excluding="F28069F_ram_lnk.cmd|2806xRevB_IQmath_BootROMSymbols_fpu32.lib|test_fast_secure_flash.cmd|ctrlUser.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+						<entry excluding="linked-mw/F28069F_ram_lnk.cmd|2806xRevB_IQmath_BootROMSymbols_fpu32.lib|ctrlUser.c|test_fast_secure_flash.cmd" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>
