@@ -16,35 +16,8 @@
 // system includes
 #include <math.h>
 #include "main.h"
-
-
-#define LED_BLINK_FREQ_Hz   5
-
-
-// **************************************************************************
-// the globals
-
-uint_least16_t gCounter_updateGlobals = 0;
-bool Flag_Latch_softwareUpdate = true;
-CTRL_Handle ctrlHandle;
-HAL_Handle halHandle;
-USER_Params gUserParams;
-HAL_PwmData_t gPwmData = {_IQ(0.0), _IQ(0.0), _IQ(0.0)};
-HAL_AdcData_t gAdcData;
-_iq gMaxCurrentSlope = _IQ(0.0);
-CTRL_Obj *controller_obj;
-ST_Obj st_obj;
-ST_Handle stHandle;
-uint16_t gLEDcnt = 0;
-volatile MOTOR_Vars_t gMotorVars = MOTOR_Vars_INIT;
-// Watch window interface to the 8301 SPI
-DRV_SPI_8301_Vars_t gDrvSpi8301Vars;
-_iq gFlux_pu_to_Wb_sf;
-_iq gFlux_pu_to_VpHz_sf;
-_iq gTorque_Ls_Id_Iq_pu_to_Nm_sf;
-_iq gTorque_Flux_Iq_pu_to_Nm_sf;
-
-
+#include "hdr/defines.h"
+#include "hdr/globals.h"
 
 
 
