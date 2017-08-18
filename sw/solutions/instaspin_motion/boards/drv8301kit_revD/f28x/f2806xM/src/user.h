@@ -342,9 +342,8 @@ extern "C" {
 
 //! \brief Defines the default bandwidth for SpinTAC Control
 //! \brief This value should be determined by putting SpinTAC Control through a tuning process
-//! \brief If a Bandwidth Scale value has been previously identified
-//! \brief multiply it by 20 to convert into Bandwidth
-#define USER_SYSTEM_BANDWIDTH      (2.0)
+//! \brief If a correct Bandwidth value has been previously identified
+#define USER_SYSTEM_BANDWIDTH      (18.0)
 
 //! \brief Define each motor with a unique name and ID number
 // BLDC & SMPM motors

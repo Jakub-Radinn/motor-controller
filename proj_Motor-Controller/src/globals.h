@@ -12,6 +12,11 @@
 
 
 
+// ------------------------------ CPU Time calculation ---------------------------------
+
+extern CPU_TIME_Handle cpu_timeHandle[CPU_TIME_NO];
+extern CPU_TIME_Obj cpu_time[CPU_TIME_NO];
+
 
 
 // ------------------------------ InstaSPIN variables and objects -----------------------------

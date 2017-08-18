@@ -16,14 +16,12 @@
 // system includes
 #include <math.h>
 #include "main.h"
-#include "src/defines.h"
 #include "src/globals.h"
-#include "src/instaspin.h"
 
 
 
 
-
+long gLoopCnt = 0;
 
 
 /***********************************************************************************************************************
@@ -35,6 +33,7 @@ void main(void)
 
     INSTASPIN_init();
 
+    TIMERS_init();
 
 
 
@@ -45,7 +44,15 @@ void main(void)
 
 	while(1)
 	{
+
+	    TIMERS_stopCpuTimeMeasurement(0);       // Stop time measurement
+	    TIMERS_startCpuTimeMeasurement(0);      // Start time measurement
+
+
+
 	    INSTASPIN_run();
+
+
 
 	} // end of while(1) loop
 }   // end of main() function
@@ -59,6 +66,8 @@ void main(void)
 interrupt void mainISR(void)
 {
     static uint16_t stCnt = 0;
+
+    TIMERS_startCpuTimeMeasurement(1);          // Start time measurement
 
     // toggle status LED
     if(++gLEDcnt >= (uint_least32_t)(USER_ISR_FREQ_Hz / LED_BLINK_FREQ_Hz))
@@ -89,6 +98,8 @@ interrupt void mainISR(void)
     // setup the controller
     CTRL_setup(ctrlHandle);
 
+
+    TIMERS_stopCpuTimeMeasurement(1);       // Stop time measurement
 
 
     return;

@@ -137,6 +137,16 @@
 			<locationURI>MW_INSTALL_DIR1/sw/drivers/cpu/src/32b/f28x/f2806x/cpu.c</locationURI>
 		</link>
 		<link>
+			<name>linked-mw/cpu_time.c</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/sw/modules/cpu_time/src/32b/cpu_time.c</locationURI>
+		</link>
+		<link>
+			<name>linked-mw/cpu_usage.c</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/sw/modules/cpu_usage/src/32b/cpu_usage.c</locationURI>
+		</link>
+		<link>
 			<name>linked-mw/ctrl.c</name>
 			<type>1</type>
 			<locationURI>MW_INSTALL_DIR1/sw/modules/ctrl/src/32b/ctrl.c</locationURI>

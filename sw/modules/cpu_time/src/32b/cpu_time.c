@@ -52,7 +52,11 @@ void CPU_TIME_setParams(CPU_TIME_Handle handle, const uint16_t pwm_period)
 
   obj->flag_resetStatus = false;
 
+  obj->timer_delta_avg_us = 0;
+  obj->timer_delta_now_us = 0;
+
   return;
 } // end of CPU_TIME_setParams() function
+
 
 // end of file

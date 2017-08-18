@@ -12,6 +12,7 @@
 #include "sw/modules/svgen/src/32b/svgen_current.h"
 #include "sw/modules/fw/src/32b/fw.h"
 #include "sw/modules/slip/src/32b/slip.h"
+#include "sw/modules/cpu_time/src/32b/cpu_time.h"
 
 // platforms
 #include "sw/modules/ctrl/src/32b/ctrl.h"
@@ -20,6 +21,11 @@
 
 // SpinTAC
 #include "sw/solutions/instaspin_motion/src/spintac_velocity.h"
+
+// user created
+#include "src/defines.h"
+#include "src/instaspin.h"
+#include "src/timers.h"
 
 /***********************************************************************************************************************
  **                                                                                                          DEFINES  **
@@ -40,16 +46,28 @@
 //!
 #define MAX_ACCEL_KRPMPS_SF  _IQ(USER_MOTOR_NUM_POLE_PAIRS * 1000.0 / USER_TRAJ_FREQ_Hz / USER_IQ_FULL_SCALE_FREQ_Hz / 60.0)
 
+
+//  bool Flag_enableSys;
+//  bool Flag_Run_Identify;
+//  bool Flag_MotorIdentified;
+//  bool Flag_enableForceAngle;
+//  bool Flag_enableFieldWeakening;
+//  bool Flag_enableRsRecalc;
+//  bool Flag_enableUserParams;
+//  bool Flag_enableOffsetcalc;
+//  bool Flag_enablePowerWarp;
+
+
 //! \brief Initialization values of global variables
 //!
-#define MOTOR_Vars_INIT {false, \
+#define MOTOR_Vars_INIT {true, \
                          false, \
                          false, \
                          true, \
                          false, \
+                         false, \
                          true, \
-                         true, \
-                         true, \
+                         false, \
                          false, \
                          CTRL_State_Idle, \
                          EST_State_Idle, \
@@ -60,8 +78,8 @@
                          _IQ(0.1), \
                          _IQ(0.1), \
                          _IQ(0.0), \
-                         _IQ(0.2), \
-                         _IQ20(5.0), \
+                         _IQ(5.0), \
+                         _IQ20(80.0), \
                          _IQ(0.0), \
                          _IQ(0.0), \
                          _IQ(USER_MAX_VS_MAG_PU), \

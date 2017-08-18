@@ -56,6 +56,9 @@ typedef struct _CPU_TIME_Obj_
   uint32_t          timer_delta_AccNum;       	//!< the number of accumulated delta count values, num
   
   bool              flag_resetStatus;       	//!< a flag to reset all measured data
+
+  uint32_t          timer_delta_avg_us;
+  uint32_t          timer_delta_now_us;
 } CPU_TIME_Obj;
 
 
@@ -163,6 +166,20 @@ static inline void CPU_TIME_updateCnts(CPU_TIME_Handle handle, const uint32_t cn
 
   return;
 } // end of CPU_TIME_updateCnts() function
+
+
+
+//! \brief     Calculates a real time in micro-seconds
+//! \param[in] handle    The CPU TIME (CPU_TIME) handle
+//! \param[in] timerCnt  The system frequency in MHz (as defined by: USER_SYSTEM_FREQ_MHz)
+static inline void CPU_TIME_calcRealTime(CPU_TIME_Handle handle, const uint16_t systemFrequency_MHz)
+{
+    handle->timer_delta_avg_us = handle->timer_delta_avg / systemFrequency_MHz;
+    handle->timer_delta_now_us = handle->timer_delta_now / systemFrequency_MHz;
+}
+
+
+
 
 
 #ifdef __cplusplus

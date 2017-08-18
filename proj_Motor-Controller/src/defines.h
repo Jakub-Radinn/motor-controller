@@ -3,7 +3,7 @@
 
 
 
-
+#define CPU_TIME_NO         3
 #define LED_BLINK_FREQ_Hz   5
 
 

@@ -28,6 +28,7 @@ void updateGlobalVariables_motor(CTRL_Handle handle, ST_Handle stHandle);
 void updateKpKiGains(CTRL_Handle handle);
 
 
+void runRsOnLine(CTRL_Handle handle);
 
 
 // Following prototypes already exist in spintac_velocity.h:

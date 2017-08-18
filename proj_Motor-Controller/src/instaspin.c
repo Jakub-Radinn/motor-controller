@@ -346,6 +346,10 @@ void updateGlobalVariables_motor(CTRL_Handle handle, ST_Handle sthandle)
   tmp = EST_getRs_Ohm(obj->estHandle);
   gMotorVars.Rs_Ohm = *((float_t *)&tmp);
 
+  // get the stator resistance online
+  tmp = EST_getRsOnLine_Ohm(obj->estHandle);
+  gMotorVars.RsOnLine_Ohm = *((float_t *)&tmp);
+
   // get the stator inductance in the direct coordinate direction
   tmp = EST_getLs_d_H(obj->estHandle);
   gMotorVars.Lsd_H = *((float_t *)&tmp);
@@ -487,3 +491,43 @@ void ST_runVelCtl(ST_Handle handle, CTRL_Handle ctrlHandle)
     // Set the Iq reference that came out of SpinTAC Velocity Control
     CTRL_setIq_ref_pu(ctrlHandle, iqReference);
 }
+
+
+
+
+
+/***********************************************************************************************************************
+ **                                                                                                      runRsOnLine  **
+ ***********************************************************************************************************************/
+void runRsOnLine(CTRL_Handle handle)
+{
+  CTRL_Obj *obj = (CTRL_Obj *)handle;
+
+  // execute Rs OnLine code
+  if(gMotorVars.Flag_Run_Identify == true)
+    {
+      if(EST_getState(obj->estHandle) == EST_State_OnLine)
+        {
+          float_t RsError_Ohm = gMotorVars.RsOnLine_Ohm - gMotorVars.Rs_Ohm;
+
+          EST_setFlag_enableRsOnLine(obj->estHandle,true);
+          EST_setRsOnLineId_mag_pu(obj->estHandle,_IQmpy(gMotorVars.RsOnLineCurrent_A,_IQ(1.0/USER_IQ_FULL_SCALE_CURRENT_A)));
+
+          if(abs(RsError_Ohm) < (gMotorVars.Rs_Ohm * 0.05))
+            {
+              EST_setFlag_updateRs(obj->estHandle,true);
+            }
+        }
+      else
+        {
+          EST_setRsOnLineId_mag_pu(obj->estHandle,_IQ(0.0));
+          EST_setRsOnLineId_pu(obj->estHandle,_IQ(0.0));
+          EST_setRsOnLine_pu(obj->estHandle,_IQ(0.0));
+          EST_setFlag_enableRsOnLine(obj->estHandle,false);
+          EST_setFlag_updateRs(obj->estHandle,false);
+          EST_setRsOnLine_qFmt(obj->estHandle,EST_getRs_qFmt(obj->estHandle));
+        }
+    }
+
+  return;
+} // end of runRsOnLine() function
