@@ -1,10 +1,11 @@
-/*********************************************************************************
- * Motor-Controller/src/instaspin.c
+/****************************************************************************//**
+ * @file instaspin.c
+ * @brief The file encapsulates all code provided by Texas Instruments (C)
+ * to run instaSPIN motor controller into separate functions.
  *
- * File containing all code related to instaSPIN motor controller
- * INSTASPIN object encapsulates all functions used to drive the motor
- * as used in instaSPIN labs in main() function and main_ISR
- *********************************************************************************/
+ * Created by Jakub Klein on 22 Aug 2017 for &reg; Radinn
+ ********************************************************************************/
+
 
 #include "globals.h"
 #include "instaspin.h"
@@ -15,6 +16,10 @@
 /***********************************************************************************************************************
  **                                                                                                   INSTASPIN_init  **
  ***********************************************************************************************************************/
+
+/**
+ * It is essentially the portion of code from instaSPIN labs placed before the main loop.
+ */
 void INSTASPIN_init(void)
 {
     uint_least8_t estNumber = 0;
@@ -109,6 +114,9 @@ void INSTASPIN_init(void)
 /***********************************************************************************************************************
  **                                                                                                    INSTASPIN_run  **
  ***********************************************************************************************************************/
+/**
+ * It is the portion of code from instaSPIN labs placed inside the main loop.
+ */
 void INSTASPIN_run(void)
 {
     // Dis-able the Library internal PI.  Iq has no reference now

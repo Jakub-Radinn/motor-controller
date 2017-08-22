@@ -1,16 +1,19 @@
-/*
- * timers.c
+/****************************************************************************//**
+ * @file timers.c
+ * @brief The file contains code for functions using the timers.
  *
- *  Created on: 18 Aug 2017
- *      Author: Jakub
- */
+ * Created by Jakub Klein on 22 Aug 2017 for &reg; Radinn
+ ********************************************************************************/
+
 
 
 #include "main.h"
 #include "globals.h"
 
 
-
+/**
+ * Initialize the CPU_USAGE module with CPU_TIME_NO time measurements
+ */
 void TIMERS_init(void)
 {
     // initialize the CPU usage module
@@ -22,7 +25,10 @@ void TIMERS_init(void)
     }
 }
 
-
+/**
+ * Place it at the line where the time measurement for specified timer (from 0 to CPU_TIME_NO) should begin
+ * @param timer_no
+ */
 void TIMERS_startCpuTimeMeasurement(int timer_no)
 {
     // read the timer 1 value and update the CPU usage module
@@ -30,7 +36,10 @@ void TIMERS_startCpuTimeMeasurement(int timer_no)
     CPU_TIME_updateCnts(cpu_timeHandle[timer_no], timerCnt);
 }
 
-
+/**
+ * Place it at the line where the time measurement for specified timer (from 0 to CPU_TIME_NO) should stop
+ * @param timer_no
+ */
 void TIMERS_stopCpuTimeMeasurement(int timer_no)
 {
     // read the timer 1 value and update the CPU usage module

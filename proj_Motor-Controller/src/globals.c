@@ -1,9 +1,12 @@
-/**********************************************************
- * The file contains all global variables definitions
- * Include "hdr/globals.h" (with 'extern' declarations)
- * in any other file you want to use those variables
+/****************************************************************************//**
+ * @file globals.c
+ * @brief The file contains definitions for global variables.
+ * Include "src/globals.h" (that contains 'extern' declarations)
+ * in any other file that needs to use those variables.
  *
- **********************************************************/
+ * Created by Jakub Klein on 22 Aug 2017 for &reg; Radinn
+ ********************************************************************************/
+
 
 
 
@@ -11,8 +14,6 @@
  **                                                                                                         INCLUDES  **
  ***********************************************************************************************************************/
 #include "main.h"
-
-
 
 
 
@@ -24,12 +25,11 @@
 
 // ------------------------------ CPU Time calculation ---------------------------------
 
-CPU_TIME_Handle cpu_timeHandle[CPU_TIME_NO];
-CPU_TIME_Obj cpu_time[CPU_TIME_NO];
+CPU_TIME_Handle cpu_timeHandle[CPU_TIME_NO];    /**<@brief Handle to the CPU_TIME object */
+CPU_TIME_Obj cpu_time[CPU_TIME_NO];             /**<@brief CPU_TIME object */
 
 
 // ------------------------------ InstaSPIN variables and objects -----------------------------
-
 uint_least16_t gCounter_updateGlobals = 0;
 uint16_t gLEDcnt = 0;
 bool Flag_Latch_softwareUpdate = true;

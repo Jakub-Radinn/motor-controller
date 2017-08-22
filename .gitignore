@@ -1,5 +1,8 @@
-# Compilation related
+# Compilation result
 Release/
+
+# Doxygen documentation
+html/
 
 # Misc
 *.tmp

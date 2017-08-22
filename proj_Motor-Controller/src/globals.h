@@ -1,8 +1,13 @@
-/***************************************************************
- * File with global variables declarations
- * (according to definitions from "globals.c"
- * to be included in any other file that uses those variables
- ***************************************************************/
+/****************************************************************************//**
+ * @file globals.h
+ * @brief The file contains declarations for global variables defined
+ * in corresponding "globals.c". Include this header in any file that
+ * uses global variables.
+ *
+ * Created by Jakub Klein on 22 Aug 2017 for &reg; Radinn
+ ********************************************************************************/
+
+
 
 #ifndef HDR_GLOBALS_H_
 #define HDR_GLOBALS_H_

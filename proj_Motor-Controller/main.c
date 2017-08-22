@@ -1,8 +1,9 @@
-/***********************************************************************************************************************************************
- * This is the basic framework for a project that uses HAL library with DRV8301 driver.
- * It bases on proj_lab01 project from TI, adopted with slight changes by Jakub Klein on 18/08/2017 for Radinn.
+/****************************************************************************//**
+ * @file main.c
+ * @brief This is the basic framework for a project that uses HAL library with DRV8301 driver,
+ * built upon proj_lab04a project from TI (C).
  *
- * Required directories structure is:
+ *  * Required directories structure is:
  *      <PARENT> directory:
  *          - <PROJECT> directory containing this project
  *          - "sw" directory copied from C:/ti/motorware (mind the project-related changes made in source files)
@@ -10,15 +11,16 @@
  * To move the project to a different location, just copy the whole <PROJECT> directory and then import it to CCS.
  * You can change name of <PROJECT> directory before importing and then rename the project (right click -> rename...) without complications.
  * The output files are placed in the "Release" directory created when building the project.
- ************************************************************************************************************************************************/
-
+ *
+ * Created by Jakub Klein on 22 Aug 2017 for &reg; Radinn
+ ********************************************************************************/
 
 // system includes
 #include <math.h>
 #include "main.h"
 #include "src/globals.h"
 
-
+#include <stdio.h>
 
 
 long gLoopCnt = 0;
@@ -27,7 +29,6 @@ long gLoopCnt = 0;
 /***********************************************************************************************************************
  **                                                                                                    MAIN FUNCTION  **
  ***********************************************************************************************************************/
-
 void main(void)
 {
 
@@ -36,11 +37,10 @@ void main(void)
     TIMERS_init();
 
 
-
-
     /*******************************************************************************************************************
      **                                                                                                  PROGRAM LOOP **
      *******************************************************************************************************************/
+    printf("Entering MAIN LOOP\n");
 
 	while(1)
 	{
