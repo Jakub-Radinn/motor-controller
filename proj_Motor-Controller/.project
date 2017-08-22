@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>Motor-Controller</name>
+	<name>Motor-Controller_Template</name>
 	<comment></comment>
 	<projects>
 	</projects>
@@ -109,7 +109,7 @@
 		<link>
 			<name>linked-mw/SpinTAC_fpu32.lib</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/sw/modules/spintac/lib/32b/SpinTAC_fpu32.lib</locationURI>
+			<locationURI>MW_INSTALL_DIR1/sw/modules/spintac/lib/32b/SpinTAC_fpu32.lib</locationURI>
 		</link>
 		<link>
 			<name>linked-mw/TMS320F28069_xds100v2.ccxml</name>
@@ -139,12 +139,12 @@
 		<link>
 			<name>linked-mw/cpu_time.c</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/sw/modules/cpu_time/src/32b/cpu_time.c</locationURI>
+			<locationURI>MW_INSTALL_DIR1/sw/modules/cpu_time/src/32b/cpu_time.c</locationURI>
 		</link>
 		<link>
 			<name>linked-mw/cpu_usage.c</name>
 			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/sw/modules/cpu_usage/src/32b/cpu_usage.c</locationURI>
+			<locationURI>MW_INSTALL_DIR1/sw/modules/cpu_usage/src/32b/cpu_usage.c</locationURI>
 		</link>
 		<link>
 			<name>linked-mw/ctrl.c</name>
