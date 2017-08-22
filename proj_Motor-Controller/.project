@@ -114,7 +114,7 @@
 		<link>
 			<name>linked-mw/TMS320F28069_xds100v2.ccxml</name>
 			<type>1</type>
-			<locationURI>MW_INSTALL_DIR1/sw/ide/ccs/ccs5/targetConfigs/TMS320F28069_xds100v2.ccxml</locationURI>
+			<location>F:/RADINN/Software/Motorware-projects/Motor-Controller/sw/ide/ccs/ccs5/targetConfigs/TMS320F28069_xds100v2.ccxml</location>
 		</link>
 		<link>
 			<name>linked-mw/adc.c</name>

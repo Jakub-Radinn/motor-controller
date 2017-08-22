@@ -31,9 +31,14 @@ long gLoopCnt = 0;
  ***********************************************************************************************************************/
 void main(void)
 {
+    printf("\n---------------------- Start of the motor-controller software ----------------------\n");
+    printf("Compilation date: %s %s\n" , __TIME__ , __DATE__);
 
+
+    // Initialise controller functions
     INSTASPIN_init();
 
+    // Initialise time measurements
     TIMERS_init();
 
 

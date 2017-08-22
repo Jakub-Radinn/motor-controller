@@ -15,11 +15,6 @@
 /***********************************************************************************************************************
  **                                                                                                         INCLUDES  **
  ***********************************************************************************************************************/
-// user created
-#include "src/defines.h"
-#include "src/instaspin.h"
-#include "src/timers.h"
-
 // modules
 #include "sw/modules/math/src/32b/math.h"
 #include "sw/modules/memCopy/src/memCopy.h"
@@ -36,6 +31,11 @@
 
 // SpinTAC
 #include "sw/solutions/instaspin_motion/src/spintac_velocity.h"
+
+// user created
+#include "src/defines.h"
+#include "src/instaspin.h"
+#include "src/timers.h"
 
 
 
